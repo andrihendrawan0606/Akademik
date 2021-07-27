@@ -94,14 +94,6 @@
 
 
     <script>
-        $("#textarea").keyup(function() {
-            $("#count").text("Characters left: " + (350 - $(this).val().length));
-        });
-	
-		$("#alertt").children().delay(3000)
-.fadeOut(function() {
-   $(this).remove(); 
-});
 
 		
     </script>

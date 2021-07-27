@@ -2,7 +2,7 @@
     <div class="navbar-brand">
         <a href="index.html" class="d-inline-block">
             <h3 class="text-light">
-                {{ Auth::user()->role }}
+            Selamat Datang
 
             </h3>
         </a>
@@ -33,7 +33,7 @@
             </li>
         </ul>
 
-        <span class="badge bg-success ml-md-3 mr-md-auto"> Admin</span>
+        <span class="badge bg-success ml-md-3 mr-md-auto">{{$admin->level}}</span>
 
         <ul class="navbar-nav">
        
@@ -43,7 +43,7 @@
             <li class="nav-item dropdown dropdown-user">
                 <a href="#" class="navbar-nav-link d-flex align-items-center dropdown-toggle" data-toggle="dropdown">
                     <img src="{{asset('global_assets')}}/images/placeholders/placeholder.jpg" class="rounded-circle mr-2" height="34" alt="">
-                   <span style="font-style: 300"> {{ Auth::user()->name }}</span>
+                   <span style="font-style: 300">{{$admin->name}} </span>
                 </a>
 
                 <div class="dropdown-menu dropdown-menu-right">

@@ -40,6 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'siswa' => [
+            'driver' => 'session',
+            'provider' => 'siswa',
+         ],
+         'admin' => [
+            'driver' => 'session',
+            'provider' => 'admin',
+         ],
 
         'api' => [
             'driver' => 'token',
@@ -69,6 +77,14 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+        'siswa' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\LoginSiswa::class,
+        ],
+        'admin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\LoginAdmin::class,
         ],
 
         // 'users' => [

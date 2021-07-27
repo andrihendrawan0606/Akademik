@@ -1,6 +1,31 @@
 @extends('layouts.admin')
 @section('content')
     
+<div class="page-header page-header-light">
+
+
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="{{route('admin.dashboard')}}" class="breadcrumb-item active"><i class="icon-home2 mr-2"></i>
+                    Dashboard</a>
+                <span class="breadcrumb-item active">Data Master</span>
+                <span class="breadcrumb-item active">Data Guru</span>
+                <span class="breadcrumb-item ">Edit Data Guru</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+        <div class="header-elements d-none">
+            <div class="breadcrumb justify-content-center">
+            
+               
+            </div>
+        </div>
+    </div>
+</div>
+
 <fieldset class="mb-3">
 
 <div class="container">
@@ -119,8 +144,8 @@
     </div>
 
     <div class="text-right">
-        <a href="{{ route('data.guru') }}" class="btn btn-dark">back</a>
-        <button type="submit" class="btn btn-primary">Update <i
+        <a href="{{ route('data.guru') }}" class="btn btn-dark" style="width: 100px">back</a>
+        <button type="submit" class="btn btn-success">Update <i
                 class=""></i></button>
     </div>
   </form>

@@ -9,7 +9,11 @@ class kelas extends Model
 {
     use HasFactory;
 
-    protected $guard   = 'kelas';
     protected $table   = 'kelas';
     protected $guarded = [];
+
+    // public function guru()
+    // {
+    //     return $this->belongsTo('App\Models\Guru','id_guru','id');
+    // }
 }

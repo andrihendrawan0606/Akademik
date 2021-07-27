@@ -15,8 +15,12 @@ class CreateKelasTable extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->enum('kelas',['XI RPL 1','XI RPL 2','XI RPL 3','XI TKJ 1','XI TKJ 2','XI TKJ 3','XI BC 1','XI BC 2','XI BC 3','XI MM 1','XI MM2','XI MM3','XI TEI']);
-            $table->string('walikelas');
+            $table->string('kode_kelas');
+            $table->enum('nama_kelas',['XI RPL 1','XI RPL 2','XI RPL 3','XI TKJ 1','XI TKJ 2','XI TKJ 3','XI BC 1','XI BC 2','XI BC 3','XI MM 1','XI MM2','XI MM3','XI TEI']);
+            $table->string('guru');
+            $table->integer('ruangan');
+            $table->enum('jurusan',['Rekayasa Perangkat Lunak','Multimedia','Brodcast','Teknik Komputer dan Jaringan','Teknik Elektronika Industri']);
+            $table->string('jumlah_siswa');
             $table->timestamps();
         });
     }

@@ -14,5 +14,8 @@ class Siswa extends Model
     protected $table   = 'siswa';
     protected $guarded = [];
 
-
+    public function Kategori_penilaian()
+    {
+        return $this->belongsTo('App\Models\Kategori_penilaian');
+    }
 }

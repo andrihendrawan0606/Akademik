@@ -40,36 +40,48 @@
                         </span>
                     </a>
                 </li>
-                {{-- @if ($petugas->level == 'admin') --}}
+                @if ($admin->level == 'admin') 
+                
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link {{'admin/masterdata' === request()->path() ? 'active ' : ''}}"> <i class="icon-equalizer3"></i> <span>Master Data</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Widgets">
                         <li class="nav-item"><a href="{{route('data.jadwal')}}" class="nav-link">Data Jadwal</a></li>
                         <li class="nav-item"><a href="{{route('data.guru')}}" class="nav-link">Data Guru</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Data Kelas</a></li>
+                        <li class="nav-item"><a href="{{route('data.kelas')}}" class="nav-link">Data Kelas</a></li>
+                        <li class="nav-item"><a href="{{route('data.mapel')}}" class="nav-link">Data Mapel</a></li>
                         <li class="nav-item"><a href="{{route('data.siswa')}}" class="nav-link {{'admin/masterdata/datasiswa' === request()->path() ? 'active ' : ''}}">Data Siswa</a></li>
                     </ul>
                 </li>
+               
 
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link">
                         <i class="icon-menu2"></i> <span>Akademik</span></a>
-                    <ul class="nav nav-group-sub" data-submenu-title="Widgets">       
+                        <ul class="nav nav-group-sub" data-submenu-title="Widgets">
+                            <li class="nav-item"><a href="{{route ('data.katnilai')}}" class="nav-link">Data Kategori Penilaian</a></li>
+                        </li>
+                @elseif ($admin->level == 'guru')
+                <li class="nav-item nav-item-submenu">
+                    <a href="#" class="nav-link">
+                        <i class="icon-menu2"></i> <span>Akademik</span></a>
+                        <ul class="nav nav-group-sub" data-submenu-title="Widgets">
+                            <li class="nav-item"><a href="{{route ('data.entripenilaian')}}" class="nav-link">Entri Penilaian </a></li>
+                            <li class="nav-item"><a href="" class="nav-link">Inputan KKM </a></li>
                         </ul>
                 </li>
-
+               
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-folder5"></i> <span>Guru Dan Staff</span></a>
                    
                     <ul class="nav nav-group-sub" data-submenu-title="Widgets">
                     </ul>
                 </li>
-
+                @elseif ($admin->level == 'admin')
                 <li class="nav-item nav-item-submenu">
                     <a href="#" class="nav-link"><i class="icon-users"></i> <span> Siswa Dan Alumni</span></a>
                     <ul class="nav nav-group-sub" data-submenu-title="Widgets">
-                        <li class="nav-item"><a href="{{route('data.siswa')}}" class="nav-link">Data Siswa</a></li>
-                        <li class="nav-item"><a href="" class="nav-link">Data Alumni</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">List Nilai Siswa</a></li>
+                        <li class="nav-item"><a href="" class="nav-link">List Data Alumni</a></li>
                     </ul>
                 </li>
 
@@ -85,13 +97,15 @@
                           <li class="nav-item"><a href="" class="nav-link">Transkrip Siswa</a></li>
                       </ul>
                   </li>
-
+                  @endif
 
                 <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="icon-cog"></i> <span>Pengaturan</span></a>      
                         </ul>
                 </li>
+               
+
 
             
                   {{-- {{route('laporan.masyarakat')}}

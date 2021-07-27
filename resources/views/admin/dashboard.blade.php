@@ -12,7 +12,7 @@
         <div class="card card-body bg-blue-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
-                    <h3 class="mb-0">1674</h3>
+                    <h3 class="mb-0">{{$siswa}}</h3>
                     <span class="text-uppercase font-size-xs">total Siswa</span>
                 </div>
 
@@ -27,7 +27,7 @@
         <div class="card card-body bg-danger-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
-                    <h3 class="mb-0">50</h3>
+                    <h3 class="mb-0">{{$Guru}}</h3>
                     <span class="text-uppercase font-size-xs">total Guru</span>
                 </div>
 
@@ -75,7 +75,7 @@
         <div class="card card-body bg-blue-400 has-bg-image">
             <div class="media">
                 <div class="media-body">
-                    <h3 class="mb-0">3</h3>
+                    <h3 class="mb-0"></h3>
                     <span class="text-uppercase font-size-xs">total Admin</span>
                 </div>
 

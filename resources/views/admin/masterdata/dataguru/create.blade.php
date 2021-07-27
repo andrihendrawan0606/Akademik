@@ -1,7 +1,33 @@
 @extends('layouts.admin')
 @section('content')
-    
+
+<div class="page-header page-header-light">
+
+
+    <div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
+        <div class="d-flex">
+            <div class="breadcrumb">
+                <a href="{{route('admin.dashboard')}}" class="breadcrumb-item active"><i class="icon-home2 mr-2"></i>
+                    Dashboard</a>
+                <span class="breadcrumb-item active">Data Master</span>
+                <span class="breadcrumb-item active">Data Guru</span>
+                <span class="breadcrumb-item ">Tambah Data Guru</span>
+            </div>
+
+            <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
+        </div>
+
+        <div class="header-elements d-none">
+            <div class="breadcrumb justify-content-center">
+            
+               
+            </div>
+        </div>
+    </div>
+</div>
+
 <fieldset class="mb-3">
+    
 
 <div class="container">
 
@@ -117,9 +143,29 @@
         </div>
     </div>
 
+    <form action="{{route ('post.pengaduan')}}" method="POST" enctype="multipart/form-data">
+        @csrf
+        <div class="form-group-row">
+            <br>
+            <div class="col-12 text-center">
+                <img src="#" id="blah" style="heighwe have to defeat itt: 200px; width: 350px;" alt="">
+            </div>
+            <label class="col-form-label col-lg-12 text-dark">Upload Gambar</label>
+            <div class="col-lg-8" style="margin-bottom: -25px;">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input @error('foto') is-invalid @enderror"
+                        id="imgInp" name="foto">
+                    <label class="custom-file-label" for="customFile">Masukan Gambar </label>
+                </div>
+                @error('foto')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
+            </div>
+
+
     <div class="text-right">
-        <a href="{{ route('data.guru') }}" class="btn btn-dark">back</a>
-        <button type="submit" class="btn btn-primary">Tambah <i
+        <a href="{{ route('data.guru') }}" class="btn btn-dark" style="width: 100px">back</a>
+        <button type="submit" class="btn btn-success">Tambah <i
                 class=""></i></button>
     </div>
   </form>

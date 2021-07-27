@@ -13,5 +13,8 @@ class Guru extends Model
     protected $table   = 'guru';
     protected $guarded = [];
 
-    
+    // public function kelas()
+    // {
+    //     return $this->hasMany('App\Models\kelas','id_kelas','id');
+    // }
 }
